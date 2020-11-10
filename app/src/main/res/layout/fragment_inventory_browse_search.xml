@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OrderingMain">
+    tools:context=".InventoryBrowseSearch">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -24,11 +24,11 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Place an order"
+                android:text="Search Inventory"
                 android:textSize="36sp" />
 
             <ImageView
-                android:id="@+id/img_scanning_window"
+                android:id="@+id/img_browse_inventory_scanning_window"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:contentDescription="camera scanning window"
@@ -47,7 +47,7 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/input_ordering_drug_name_ndc"
+                    android:id="@+id/input_inventory_drug_name_ndc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -56,20 +56,13 @@
                     android:text="NDC # or drug name" />
 
                 <Button
-                    android:id="@+id/btn_ordering_search"
+                    android:id="@+id/btn_inventory_search"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Search" />
 
             </LinearLayout>
-
-            <Button
-                android:id="@+id/btn_view_order_history"
-                android:layout_width="match_parent"
-                android:layout_height="157dp"
-                android:layout_weight="1"
-                android:text="View order history" />
 
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
