@@ -2,7 +2,9 @@ package com.example.swen444_pharm_manager;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -60,5 +62,51 @@ public class OrderingMain extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_ordering_main, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+
+        view.findViewById(R.id.MenuImage).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavHostFragment.findNavController(OrderingMain.this)
+                        .navigate(R.id.action_OrderingMain_to_MainMenu);
+            }
+        });
+
+        view.findViewById(R.id.ordering_main_back_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavHostFragment.findNavController(OrderingMain.this)
+                        .navigate(R.id.action_OrderingMain_to_MainMenu);
+            }
+        });
+
+        view.findViewById(R.id.btn_place_order).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavHostFragment.findNavController(OrderingMain.this)
+                        .navigate(R.id.action_OrderingMain_to_orderingOrderConfirmation);
+            }
+        });
+
+        view.findViewById(R.id.btn_ordering_search).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavHostFragment.findNavController(OrderingMain.this)
+                        .navigate(R.id.action_OrderingMain_to_orderingList);
+            }
+        });
+
+        view.findViewById(R.id.btn_view_order_history).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavHostFragment.findNavController(OrderingMain.this)
+                        .navigate(R.id.action_OrderingMain_to_orderingHistory);
+            }
+        });
     }
 }
