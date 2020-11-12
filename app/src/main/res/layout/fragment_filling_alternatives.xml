@@ -89,6 +89,24 @@
 
         </LinearLayout>
 
+
+        <ImageView
+            android:id="@+id/MenuImage"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginEnd="355dp"
+            android:src="@android:drawable/ic_dialog_dialer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/BackImage"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:src="@drawable/abc_vector_test"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
