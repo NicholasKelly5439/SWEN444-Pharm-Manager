@@ -2,7 +2,9 @@ package com.example.swen444_pharm_manager;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -60,5 +62,27 @@ public class InventoryBrowseList extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_inventory_browse_list, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+
+        view.findViewById(R.id.MenuImage).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavHostFragment.findNavController(InventoryBrowseList.this)
+                        .navigate(R.id.action_InventoryBrowseList_to_MainMenu);
+            }
+        });
+
+        view.findViewById(R.id.inventory_browse_list_back_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavHostFragment.findNavController(InventoryBrowseList.this)
+                        .navigate(R.id.action_InventoryBrowseList_to_InventoryBrowseSearch);
+            }
+        });
     }
 }

@@ -36,7 +36,7 @@
                 android:textSize="36sp" />
 
             <ImageView
-                android:id="@+id/img_browse_inventory_scanning_window"
+                android:id="@+id/browse_inventory_scanning_camera"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:contentDescription="camera scanning window"
@@ -104,7 +104,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/BackImage"
+            android:id="@+id/inventory_browse_search_back_button"
             android:layout_width="56dp"
             android:layout_height="56dp"
             android:src="@drawable/abc_vector_test"
