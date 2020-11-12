@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/imageview_scanning_window"
+            android:id="@+id/cycle_scanning_camera"
             android:layout_width="match_parent"
             android:layout_height="271dp"
             android:contentDescription="camera scanning window"
@@ -88,7 +88,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/BackImage"
+        android:id="@+id/inventory_cycle_scan_back_button"
         android:layout_width="56dp"
         android:layout_height="56dp"
         android:src="@drawable/abc_vector_test"

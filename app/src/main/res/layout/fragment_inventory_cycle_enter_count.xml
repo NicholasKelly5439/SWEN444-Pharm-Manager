@@ -10,7 +10,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <Button
+            android:id="@+id/btn_inject_mismatch_error"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Inject mismatch error"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
         <LinearLayout
+            android:id="@+id/linearLayout10"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="30dp"
@@ -108,7 +118,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/BackImage"
+            android:id="@+id/inventory_cycle_enter_count_back_button"
             android:layout_width="56dp"
             android:layout_height="56dp"
             android:src="@drawable/abc_vector_test"

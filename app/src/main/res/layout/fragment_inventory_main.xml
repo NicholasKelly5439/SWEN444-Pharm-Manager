@@ -64,7 +64,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/BackImage"
+        android:id="@+id/inventory_main_back_button"
         android:layout_width="56dp"
         android:layout_height="56dp"
         android:src="@drawable/abc_vector_test"

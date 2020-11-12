@@ -89,7 +89,7 @@
                     android:text="Recount" />
 
                 <Button
-                    android:id="@+id/ContinueToScanButton"
+                    android:id="@+id/btn_submit_mismatch"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
@@ -130,7 +130,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/BackImage"
+            android:id="@+id/inventory_cycle_mismatch_back_button"
             android:layout_width="56dp"
             android:layout_height="56dp"
             android:src="@drawable/abc_vector_test"
