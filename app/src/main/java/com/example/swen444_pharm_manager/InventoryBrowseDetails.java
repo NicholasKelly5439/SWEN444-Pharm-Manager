@@ -2,7 +2,9 @@ package com.example.swen444_pharm_manager;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -60,5 +62,59 @@ public class InventoryBrowseDetails extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_inventory_browse_details, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        view.findViewById(R.id.MenuImage).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavHostFragment.findNavController(InventoryBrowseDetails.this)
+                        .navigate(R.id.action_FillingMain_to_MainMenu);
+            }
+        });
+
+        view.findViewById(R.id.BackImage).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavHostFragment.findNavController(InventoryBrowseDetails.this)
+                        .navigate(R.id.action_FillingMain_to_MainMenu);
+            }
+        });
+
+        view.findViewById(R.id.filling_bag_1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavHostFragment.findNavController(InventoryBrowseDetails.this)
+                        .navigate(R.id.action_FillingMain_to_FillingLabelPreview);
+            }
+        });
+
+        view.findViewById(R.id.filling_bag_2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavHostFragment.findNavController(InventoryBrowseDetails.this)
+                        .navigate(R.id.action_FillingMain_to_FillingLabelPreview);
+            }
+        });
+
+        view.findViewById(R.id.filling_bag_3).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavHostFragment.findNavController(InventoryBrowseDetails.this)
+                        .navigate(R.id.action_FillingMain_to_FillingLabelPreview);
+            }
+        });
+
+        view.findViewById(R.id.filling_bag_4).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavHostFragment.findNavController(InventoryBrowseDetails.this)
+                        .navigate(R.id.action_FillingMain_to_FillingLabelPreview);
+            }
+        });
+
     }
 }

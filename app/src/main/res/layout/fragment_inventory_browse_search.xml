@@ -80,7 +80,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="44dp"
             android:theme="@style/Theme.SWEN444PharmManager.AppBarOverlay"
-            app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+            app:layout_constraintBottom_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
