@@ -3,26 +3,291 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/MainMenu">
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.example.swen444_pharm_manager.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
-
+        android:id="@+id/MainMenu"
+        android:name="com.example.swen444_pharm_manager.fragment_menu"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" >
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.example.swen444_pharm_manager.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
-
+            android:id="@+id/action_MainMenu_to_BaggingMain"
+            app:destination="@id/Bagging" />
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/action_MainMenu_to_OrderingMain"
+            app:destination="@id/Ordering" />
+        <action
+            android:id="@+id/action_MainMenu_to_InventoryMain"
+            app:destination="@id/Inventory" />
+        <action
+            android:id="@+id/action_MainMenu_to_FillingMain"
+            app:destination="@id/Filling" />
     </fragment>
+    <navigation android:id="@+id/Ordering"
+        app:startDestination="@id/OrderingMain">
+        <fragment
+            android:id="@+id/orderingHistory"
+            android:name="com.example.swen444_pharm_manager.OrderingHistory"
+            android:label="fragment_ordering_history"
+            tools:layout="@layout/fragment_ordering_history">
+            <action
+                android:id="@+id/action_orderingHistory_to_MainMenu"
+                app:destination="@id/MainMenu" />
+            <action
+                android:id="@+id/action_orderingHistory_to_OrderingMain"
+                app:destination="@id/OrderingMain" />
+        </fragment>
+        <fragment
+            android:id="@+id/orderingOrderConfirmation"
+            android:name="com.example.swen444_pharm_manager.OrderingOrderConfirmation"
+            android:label="fragment_ordering_order_confirmation"
+            tools:layout="@layout/fragment_ordering_order_confirmation">
+            <action
+                android:id="@+id/action_orderingOrderConfirmation_to_MainMenu"
+                app:destination="@id/MainMenu" />
+            <action
+                android:id="@+id/action_orderingOrderConfirmation_to_OrderingMain"
+                app:destination="@id/OrderingMain" />
+        </fragment>
+        <fragment
+            android:id="@+id/OrderingMain"
+            android:name="com.example.swen444_pharm_manager.OrderingMain"
+            android:label="fragment_ordering_main"
+            tools:layout="@layout/fragment_ordering_main">
+            <action
+                android:id="@+id/action_OrderingMain_to_orderingHistory"
+                app:destination="@id/orderingHistory" />
+            <action
+                android:id="@+id/action_OrderingMain_to_orderingList"
+                app:destination="@id/orderingList" />
+            <action
+                android:id="@+id/action_OrderingMain_to_MainMenu"
+                app:destination="@id/MainMenu" />
+            <action
+                android:id="@+id/action_OrderingMain_to_orderingOrderConfirmation"
+                app:destination="@id/orderingOrderConfirmation" />
+        </fragment>
+        <fragment
+            android:id="@+id/orderingList"
+            android:name="com.example.swen444_pharm_manager.OrderingList"
+            android:label="fragment_ordering_list"
+            tools:layout="@layout/fragment_ordering_list">
+            <action
+                android:id="@+id/action_orderingList_to_MainMenu"
+                app:destination="@id/MainMenu" />
+            <action
+                android:id="@+id/action_orderingList_to_OrderingMain"
+                app:destination="@id/OrderingMain" />
+        </fragment>
+    </navigation>
+    <navigation android:id="@+id/Bagging"
+        app:startDestination="@id/BaggingMain">
+        <fragment
+            android:id="@+id/BaggingMain"
+            android:name="com.example.swen444_pharm_manager.BaggingMain"
+            android:label="fragment_bagging_main"
+            tools:layout="@layout/fragment_bagging_main">
+            <action
+                android:id="@+id/action_BaggingMain_to_BaggingRxScanning"
+                app:destination="@id/BaggingRxScanning" />
+            <action
+                android:id="@+id/action_BaggingMain_to_MainMenu"
+                app:destination="@id/MainMenu" />
+        </fragment>
+        <fragment
+            android:id="@+id/BaggingRxScanning"
+            android:name="com.example.swen444_pharm_manager.BaggingRxScanning"
+            android:label="fragment_bagging_rx_scanning"
+            tools:layout="@layout/fragment_bagging_rx_scanning">
+            <action
+                android:id="@+id/action_BaggingRxScanning_to_BaggingMain"
+                app:destination="@id/BaggingMain" />
+        </fragment>
+    </navigation>
+    <navigation android:id="@+id/Inventory"
+        app:startDestination="@id/InventoryMain">
+        <fragment
+            android:id="@+id/InventoryCycleScan"
+            android:name="com.example.swen444_pharm_manager.InventoryCycleScan"
+            android:label="fragment_inventory_cycle_scan"
+            tools:layout="@layout/fragment_inventory_cycle_scan">
+            <action
+                android:id="@+id/action_InventoryCycleScan_to_MainMenu"
+                app:destination="@id/MainMenu" />
+            <action
+                android:id="@+id/action_InventoryCycleScan_to_InventoryCycleEnterCount"
+                app:destination="@id/InventoryCycleEnterCount" />
+        </fragment>
+        <fragment
+            android:id="@+id/InventoryBrowseSearch"
+            android:name="com.example.swen444_pharm_manager.InventoryBrowseSearch"
+            android:label="fragment_inventory_browse_search"
+            tools:layout="@layout/fragment_inventory_browse_search">
+            <action
+                android:id="@+id/action_InventoryBrowseSearch_to_MainMenu"
+                app:destination="@id/MainMenu" />
+            <action
+                android:id="@+id/action_InventoryBrowseSearch_to_InventoryBrowseList"
+                app:destination="@id/InventoryBrowseList" />
+            <action
+                android:id="@+id/action_InventoryBrowseSearch_to_InventoryMain"
+                app:destination="@id/InventoryMain" />
+        </fragment>
+        <fragment
+            android:id="@+id/InventoryCycleEnterCount"
+            android:name="com.example.swen444_pharm_manager.InventoryCycleEnterCount"
+            android:label="fragment_inventory_cycle_enter_count"
+            tools:layout="@layout/fragment_inventory_cycle_enter_count">
+            <action
+                android:id="@+id/action_InventoryCycleEnterCount_to_MainMenu"
+                app:destination="@id/MainMenu" />
+            <action
+                android:id="@+id/action_InventoryCycleEnterCount_to_InventoryCycleMismatch"
+                app:destination="@id/InventoryCycleMismatch" />
+            <action
+                android:id="@+id/action_InventoryCycleEnterCount_to_InventoryCycleScan"
+                app:destination="@id/InventoryCycleScan" />
+        </fragment>
+        <fragment
+            android:id="@+id/InventoryCycleMismatch"
+            android:name="com.example.swen444_pharm_manager.InventoryCycleMismatch"
+            android:label="fragment_inventory_cycle_mismatch"
+            tools:layout="@layout/fragment_inventory_cycle_mismatch">
+            <action
+                android:id="@+id/action_InventoryCycleMismatch_to_MainMenu"
+                app:destination="@id/MainMenu" />
+            <action
+                android:id="@+id/action_InventoryCycleMismatch_to_InventoryCycleEnterCount"
+                app:destination="@id/InventoryCycleEnterCount" />
+            <action
+                android:id="@+id/action_InventoryCycleMismatch_to_InventoryCycleScan"
+                app:destination="@id/InventoryCycleScan" />
+        </fragment>
+        <fragment
+            android:id="@+id/InventoryMain"
+            android:name="com.example.swen444_pharm_manager.InventoryMain"
+            android:label="fragment_inventory_main"
+            tools:layout="@layout/fragment_inventory_main">
+            <action
+                android:id="@+id/action_InventoryMain_to_MainMenu"
+                app:destination="@id/MainMenu" />
+            <action
+                android:id="@+id/action_InventoryMain_to_InventoryBrowseSearch"
+                app:destination="@id/InventoryBrowseSearch" />
+            <action
+                android:id="@+id/action_InventoryMain_to_InventoryCycleScan"
+                app:destination="@id/InventoryCycleScan" />
+        </fragment>
+        <fragment
+            android:id="@+id/InventoryBrowseDetails"
+            android:name="com.example.swen444_pharm_manager.InventoryBrowseDetails"
+            android:label="fragment_inventory_browse_details"
+            tools:layout="@layout/fragment_inventory_browse_details">
+            <action
+                android:id="@+id/action_InventoryBrowseDetails_to_MainMenu"
+                app:destination="@id/MainMenu" />
+            <action
+                android:id="@+id/action_InventoryBrowseDetails_to_InventoryBrowseSearch"
+                app:destination="@id/InventoryBrowseSearch" />
+            <action
+                android:id="@+id/action_InventoryBrowseDetails_to_InventoryBrowseList"
+                app:destination="@id/InventoryBrowseList" />
+        </fragment>
+        <fragment
+            android:id="@+id/InventoryBrowseList"
+            android:name="com.example.swen444_pharm_manager.InventoryBrowseList"
+            android:label="fragment_inventory_browse_list"
+            tools:layout="@layout/fragment_inventory_browse_list">
+            <action
+                android:id="@+id/action_InventoryBrowseList_to_MainMenu"
+                app:destination="@id/MainMenu" />
+            <action
+                android:id="@+id/action_InventoryBrowseList_to_InventoryBrowseDetails"
+                app:destination="@id/InventoryBrowseDetails" />
+            <action
+                android:id="@+id/action_InventoryBrowseList_to_InventoryBrowseSearch"
+                app:destination="@id/InventoryBrowseSearch" />
+        </fragment>
+    </navigation>
+    <navigation android:id="@+id/Filling"
+        app:startDestination="@id/FillingMain">
+        <fragment
+            android:id="@+id/FillingAlternatives"
+            android:name="com.example.swen444_pharm_manager.FillingAlternatives"
+            android:label="fragment_filling_alternatives"
+            tools:layout="@layout/fragment_filling_alternatives">
+            <action
+                android:id="@+id/action_FillingAlternatives_to_FillingCounting"
+                app:destination="@id/FillingCounting" />
+            <action
+                android:id="@+id/action_FillingAlternatives_to_MainMenu"
+                app:destination="@id/MainMenu" />
+            <action
+                android:id="@+id/action_FillingAlternatives_to_FillingRxScanning"
+                app:destination="@id/FillingRxScanning" />
+        </fragment>
+        <fragment
+            android:id="@+id/FillingLabelPreview"
+            android:name="com.example.swen444_pharm_manager.FillingLabelPreview"
+            android:label="fragment_filling_label_preview"
+            tools:layout="@layout/fragment_filling_label_preview">
+            <action
+                android:id="@+id/action_FillingLabelPreview_to_FillingRxScanning"
+                app:destination="@id/FillingRxScanning" />
+            <action
+                android:id="@+id/action_FillingLabelPreview_to_MainMenu"
+                app:destination="@id/MainMenu" />
+            <action
+                android:id="@+id/action_FillingLabelPreview_to_FillingMain"
+                app:destination="@id/FillingMain" />
+        </fragment>
+        <fragment
+            android:id="@+id/FillingRxScanning"
+            android:name="com.example.swen444_pharm_manager.FillingRxScanning"
+            android:label="fragment_filling_rx_scanning"
+            tools:layout="@layout/fragment_filling_rx_scanning">
+            <action
+                android:id="@+id/action_FillingRxScanning_to_FillingAlternatives"
+                app:destination="@id/FillingAlternatives" />
+            <action
+                android:id="@+id/action_FillingRxScanning_to_FillingCounting"
+                app:destination="@id/FillingCounting" />
+            <action
+                android:id="@+id/action_FillingRxScanning_to_MainMenu"
+                app:destination="@id/MainMenu" />
+            <action
+                android:id="@+id/action_FillingRxScanning_to_FillingLabelPreview"
+                app:destination="@id/FillingLabelPreview" />
+        </fragment>
+        <fragment
+            android:id="@+id/FillingCounting"
+            android:name="com.example.swen444_pharm_manager.FillingCounting"
+            android:label="fragment_filling_counting"
+            tools:layout="@layout/fragment_filling_counting">
+            <action
+                android:id="@+id/action_FillingCounting_to_FillingRxScanning"
+                app:destination="@id/FillingRxScanning" />
+            <action
+                android:id="@+id/action_FillingCounting_to_MainMenu"
+                app:destination="@id/MainMenu" />
+            <action
+                android:id="@+id/action_FillingCounting_to_FillingMain"
+                app:destination="@id/FillingMain" />
+            <action
+                android:id="@+id/action_FillingCounting_to_FillingAlternatives"
+                app:destination="@id/FillingAlternatives" />
+        </fragment>
+        <fragment
+            android:id="@+id/FillingMain"
+            android:name="com.example.swen444_pharm_manager.FillingMain"
+            android:label="fragment_filling_main"
+            tools:layout="@layout/fragment_filling_main">
+            <action
+                android:id="@+id/action_FillingMain_to_FillingLabelPreview"
+                app:destination="@id/FillingLabelPreview" />
+            <action
+                android:id="@+id/action_FillingMain_to_MainMenu"
+                app:destination="@id/MainMenu" />
+        </fragment>
+    </navigation>
 </navigation>
