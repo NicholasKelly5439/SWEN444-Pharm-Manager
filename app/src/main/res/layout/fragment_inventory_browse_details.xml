@@ -173,6 +173,14 @@
                 android:text="##/##/##" />
         </LinearLayout>
 
+        <Button
+            android:id="@+id/NewInventorySearchbutton"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="10dp"
+            android:text="New Search"
+            android:textSize="24sp" />
+
     </LinearLayout>
 
     <com.google.android.material.appbar.AppBarLayout

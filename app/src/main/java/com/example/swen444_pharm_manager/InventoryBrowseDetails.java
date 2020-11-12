@@ -72,7 +72,7 @@ public class InventoryBrowseDetails extends Fragment {
             @Override
             public void onClick(View v) {
                 NavHostFragment.findNavController(InventoryBrowseDetails.this)
-                        .navigate(R.id.action_FillingMain_to_MainMenu);
+                        .navigate(R.id.action_InventoryBrowseDetails_to_MainMenu);
             }
         });
 
@@ -80,39 +80,15 @@ public class InventoryBrowseDetails extends Fragment {
             @Override
             public void onClick(View v) {
                 NavHostFragment.findNavController(InventoryBrowseDetails.this)
-                        .navigate(R.id.action_FillingMain_to_MainMenu);
+                        .navigate(R.id.action_InventoryBrowseDetails_to_InventoryBrowseList);
             }
         });
 
-        view.findViewById(R.id.filling_bag_1).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.NewInventorySearchbutton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 NavHostFragment.findNavController(InventoryBrowseDetails.this)
-                        .navigate(R.id.action_FillingMain_to_FillingLabelPreview);
-            }
-        });
-
-        view.findViewById(R.id.filling_bag_2).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                NavHostFragment.findNavController(InventoryBrowseDetails.this)
-                        .navigate(R.id.action_FillingMain_to_FillingLabelPreview);
-            }
-        });
-
-        view.findViewById(R.id.filling_bag_3).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                NavHostFragment.findNavController(InventoryBrowseDetails.this)
-                        .navigate(R.id.action_FillingMain_to_FillingLabelPreview);
-            }
-        });
-
-        view.findViewById(R.id.filling_bag_4).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                NavHostFragment.findNavController(InventoryBrowseDetails.this)
-                        .navigate(R.id.action_FillingMain_to_FillingLabelPreview);
+                        .navigate(R.id.action_InventoryBrowseDetails_to_InventoryBrowseSearch);
             }
         });
 
