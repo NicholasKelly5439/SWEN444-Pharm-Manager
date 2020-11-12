@@ -13,8 +13,11 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="30dp"
             android:orientation="vertical"
-            android:padding="20dp">
+            android:padding="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
 
             <TextView
@@ -36,6 +39,7 @@
                     android:orientation="vertical">
 
                     <LinearLayout
+                        android:id="@+id/Alternative1"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical">
@@ -64,6 +68,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/Alternative2"
                         android:layout_width="228dp"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
@@ -89,6 +94,26 @@
 
         </LinearLayout>
 
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="22dp"
+            android:theme="@style/Theme.SWEN444PharmManager.AppBarOverlay"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?attr/colorPrimary"
+                app:popupTheme="@style/Theme.SWEN444PharmManager.PopupOverlay" />
+
+        </com.google.android.material.appbar.AppBarLayout>
 
         <ImageView
             android:id="@+id/MenuImage"

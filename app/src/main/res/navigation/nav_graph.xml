@@ -102,6 +102,9 @@
             <action
                 android:id="@+id/action_BaggingRxScanning_to_BaggingMain"
                 app:destination="@id/BaggingMain" />
+            <action
+                android:id="@+id/action_BaggingRxScanning_to_MainMenu"
+                app:destination="@id/MainMenu" />
         </fragment>
     </navigation>
     <navigation android:id="@+id/Inventory"
@@ -117,6 +120,9 @@
             <action
                 android:id="@+id/action_InventoryCycleScan_to_InventoryCycleEnterCount"
                 app:destination="@id/InventoryCycleEnterCount" />
+            <action
+                android:id="@+id/action_InventoryCycleScan_to_InventoryMain"
+                app:destination="@id/InventoryMain" />
         </fragment>
         <fragment
             android:id="@+id/InventoryBrowseSearch"

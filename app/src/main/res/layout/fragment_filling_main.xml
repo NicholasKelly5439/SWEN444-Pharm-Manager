@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="Please scan a bag to continue"
-            android:textSize="18sp" />
+            android:textSize="24sp" />
 
         <ScrollView
             android:layout_width="match_parent"
